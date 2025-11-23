@@ -1,2 +1,4 @@
+#!/bin/bash
+
 php /var/www/user/bin/hyperf.php server:watch &
-php /var/www/order/bin/hyperf.php server:watch &
+php /var/www/order/bin/hyperf.php server:watch

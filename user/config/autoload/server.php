@@ -31,16 +31,14 @@ return [
                 'enable_request_lifecycle' => false,
             ],
         ],
-        //下面定义 JSON RPC Server
         [
-            'name' => 'jsonrpc-http', //需要修改
+            'name' => 'grpc',
             'type' => Server::SERVER_HTTP,
             'host' => '0.0.0.0',
-            'port' => 9601,//我们docker配置服务提供的端口号是9503
+            'port' => 9601,
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
-                //这里需要用JsonRpc
-                Event::ON_REQUEST => [Hyperf\GrpcServer\Server::class, 'onRequest'],
+                Event::ON_REQUEST => [\Hyperf\GrpcServer\Server::class, 'onRequest'],
             ],
         ],
     ],

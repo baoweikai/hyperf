@@ -33,6 +33,7 @@
         "hyperf/model-cache": "~3.1.0",
         "hyperf/process": "~3.1.0",
         "hyperf/redis": "~3.1.0",
+        "hyperf/rpc": "^3.1",
         "hyperf/tracer": "~3.1.0"
     },
     "require-dev": {
@@ -54,8 +55,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "GPBMetadata\\": "grpc/GPBMetadata",
-            "Grpc\\": "grpc/Grpc"
+            "GPBMetadata\\": "grpc/GPBMetadata/",
+            "Grpc\\": "grpc/Grpc/"
         },
         "files": []
     },

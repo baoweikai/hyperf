@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>grpc.HiReply</code>
  */
-class HiReply extends \Google\Protobuf\Internal\Message
+class GrpcMessage extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string message = 1;</code>
@@ -59,36 +59,13 @@ class HiReply extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
-
     /**
      * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
-     * @return \Grpc\HiUser|null
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    public function hasUser()
-    {
-        return isset($this->user);
-    }
-
-    public function clearUser()
-    {
-        unset($this->user);
-    }
-
-    /**
-     * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
-     * @param \Grpc\HiUser $var
+     * @param int $id
      * @return $this
      */
-    public function setUser($var)
+    public function setId($id)
     {
-        GPBUtil::checkMessage($var, \Grpc\HiUser::class);
-        $this->user = $var;
-
         return $this;
     }
 

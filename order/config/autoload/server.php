@@ -33,7 +33,7 @@ return [
         ],
         //下面定义 JSON RPC Server
         [
-            'name' => 'jsonrpc-http', //需要修改
+            'name' => 'grpc', //需要修改
             'type' => Server::SERVER_HTTP,
             'host' => '0.0.0.0',
             'port' => 9602,//我们docker配置服务提供的端口号是9503

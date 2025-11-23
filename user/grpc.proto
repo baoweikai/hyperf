@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package grpc;
 
-service Hi {
-    rpc SayHello (HiUser) returns (HiReply) {
+service User {
+    rpc Info (HiUser) returns (HiReply) {
     }
 }
 

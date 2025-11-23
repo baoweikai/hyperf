@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Generated from protobuf message <code>grpc.HiReply</code>
  */
-class HiReply extends \Google\Protobuf\Internal\Message
+class GrpcMessage extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string message = 1;</code>
@@ -21,7 +21,6 @@ class HiReply extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
      */
-    protected $user = null;
 
     /**
      * Constructor.
@@ -37,7 +36,11 @@ class HiReply extends \Google\Protobuf\Internal\Message
         \GPBMetadata\Grpc::initOnce();
         parent::__construct($data);
     }
-
+    public function request(){
+        $client = new \Hyperf\GrpcClient\BaseClient('127.0.0.1:9601', [
+            'credentials' => null,
+        ]);
+    }
     /**
      * Generated from protobuf field <code>string message = 1;</code>
      * @return string
@@ -62,33 +65,11 @@ class HiReply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
-     * @return \Grpc\HiUser|null
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    public function hasUser()
-    {
-        return isset($this->user);
-    }
-
-    public function clearUser()
-    {
-        unset($this->user);
-    }
-
-    /**
-     * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
-     * @param \Grpc\HiUser $var
+     * @param array $data
      * @return $this
      */
-    public function setUser($var)
+    public function setData($data)
     {
-        GPBUtil::checkMessage($var, \Grpc\HiUser::class);
-        $this->user = $var;
-
         return $this;
     }
 

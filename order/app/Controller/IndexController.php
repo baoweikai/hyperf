@@ -12,8 +12,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use grpc\HiReply;
-use grpc\HiUser;
+use Grpc\GrpcClient;
 
 class IndexController extends AbstractController
 {
@@ -24,15 +23,14 @@ class IndexController extends AbstractController
 
         return [
             'method' => $method,
-            'message' => "Hello 111333 {$user}.",
+            'message' => "Hello 11 {$user}.",
         ];
     }
-
-    public function sayHello(HiUser $user) 
+    public function hello()
     {
-        $message = new HiReply();
-        $message->setMessage("Hello World");
-        $message->setUser($user);
-        return $message;
+        $client = new GrpcClient();
+        $message = $client->get('/User/Info');
+
+        return [$message];
     }
 }

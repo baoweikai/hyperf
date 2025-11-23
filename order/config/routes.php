@@ -13,14 +13,8 @@ use Hyperf\HttpServer\Router\Router;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
-Router::get('hello', 'App\Controller\OrderController@hello');
+Router::get('/hello', 'App\Controller\IndexController@hello');
 
 Router::get('/favicon.ico', function () {
     return '';
-});
-
-Router::addServer('grpc', function () {
-    Router::addGroup('/grpc.Hi', function () {
-        Router::post('/SayHello', 'App\Controller\HiController@sayHello');
-    });
 });

@@ -12,7 +12,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class IndexController extends AbstractController
+use Grpc\GrpcMessage;
+
+class UserController extends AbstractController
 {
     public function index()
     {
@@ -23,5 +25,12 @@ class IndexController extends AbstractController
             'method' => $method,
             'message' => "Hello 111 {$user}.",
         ];
+    }
+
+    public function info() 
+    {
+        $message = new GrpcMessage();
+        $message->setMessage("Hello World 1111");
+        return $message;
     }
 }
