@@ -2,17 +2,15 @@ syntax = "proto3";
 
 package grpc;
 
-service Hi {
-    rpc SayHello (HiUser) returns (HiReply) {
+service User {
+    rpc Info (GrpcAsk) returns (GrpcReply) {
     }
 }
 
-message HiUser {
-    string name = 1;
-    int32 sex = 2;
+message GrpcAsk {
+    string message = 1;
 }
 
-message HiReply {
+message GrpcReply {
     string message = 1;
-    HiUser user = 2;
 }

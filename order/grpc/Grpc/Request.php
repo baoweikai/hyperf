@@ -10,18 +10,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>grpc.HiReply</code>
+ * Generated from protobuf message <code>grpc.Request</code>
  */
-class GrpcMessage extends \Google\Protobuf\Internal\Message
+class Request extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string message = 1;</code>
      */
     protected $message = '';
-    /**
-     * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
-     */
-    protected $user = null;
 
     /**
      * Constructor.
@@ -30,7 +26,6 @@ class GrpcMessage extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $message
-     *     @type \Grpc\HiUser $user
      * }
      */
     public function __construct($data = NULL) {
@@ -57,15 +52,6 @@ class GrpcMessage extends \Google\Protobuf\Internal\Message
         GPBUtil::checkString($var, True);
         $this->message = $var;
 
-        return $this;
-    }
-    /**
-     * Generated from protobuf field <code>.grpc.HiUser user = 2;</code>
-     * @param int $id
-     * @return $this
-     */
-    public function setId($id)
-    {
         return $this;
     }
 

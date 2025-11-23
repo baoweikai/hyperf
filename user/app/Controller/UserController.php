@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Grpc\GrpcMessage;
+use Grpc\Reply;
 
 class UserController extends AbstractController
 {
@@ -29,8 +29,8 @@ class UserController extends AbstractController
 
     public function info() 
     {
-        $message = new GrpcMessage();
-        $message->setMessage("Hello World 1111");
+        $message = new Reply();
+        $message->setMessage("Hello World 222");
         return $message;
     }
 }

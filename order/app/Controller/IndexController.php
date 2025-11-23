@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Grpc\GrpcClient;
+use App\GrpcClient;
 
 class IndexController extends AbstractController
 {
@@ -29,7 +29,7 @@ class IndexController extends AbstractController
     public function hello()
     {
         $client = new GrpcClient();
-        $message = $client->get('/User/Info');
+        $message = $client->request('/User/Info');
 
         return [$message];
     }

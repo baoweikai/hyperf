@@ -3,16 +3,14 @@ syntax = "proto3";
 package grpc;
 
 service User {
-    rpc Info (HiUser) returns (HiReply) {
+    rpc Info (Request) returns (Reply) {
     }
 }
 
-message HiUser {
-    string name = 1;
-    int32 sex = 2;
+message Request {
+    string message = 1;
 }
 
-message HiReply {
+message Reply {
     string message = 1;
-    HiUser user = 2;
 }
