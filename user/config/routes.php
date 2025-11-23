@@ -18,6 +18,6 @@ Router::get('/favicon.ico', function () {
 });
 
 Router::addServer('grpc', function () {
-    Router::post('/User/List', 'App\Controller\UserController@index');
-    Router::post('/User/Info', 'App\Controller\UserController@info');
+    Router::post('/user', 'App\Controller\UserController@index');
+    Router::post('/user/{id:\d+}', 'App\Controller\UserController@view');
 });

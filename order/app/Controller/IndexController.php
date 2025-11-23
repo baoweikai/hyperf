@@ -26,10 +26,10 @@ class IndexController extends AbstractController
             'message' => "Hello 11 {$user}.",
         ];
     }
-    public function hello()
+    public function view(int $id)
     {
         $client = new GrpcClient();
-        $message = $client->request('/User/Info');
+        $message = $client->request('/user/' . $id);
 
         return [$message];
     }

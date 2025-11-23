@@ -19,21 +19,18 @@ class UserController extends AbstractController
 {
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
-
-        return [
-            'method' => $method,
-            'message' => "Hello 111 {$user}.",
-        ];
+        $rows = User::query()->where('delete_at', '=', 0)->get()->all();
+        $message = new Reply();
+        $message->setMessage(json_encode(['list' => $rows]));
+        return $message;
     }
 
-    public function info() 
+    public function view()
     {
         $model = User::query()->where('id', '=', 193)->first();
 
         $message = new Reply();
-        $message->setMessage(json_encode($model->getDates()));
+        $message->setMessage(json_encode($model));
         return $message;
     }
 }
