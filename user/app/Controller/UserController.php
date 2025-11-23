@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Grpc\Reply;
+use App\Model\User;
 
 class UserController extends AbstractController
 {
@@ -29,8 +30,10 @@ class UserController extends AbstractController
 
     public function info() 
     {
+        $model = User::query()->where('id', '=', 193)->first();
+
         $message = new Reply();
-        $message->setMessage("Hello World 222");
+        $message->setMessage(json_encode($model->getDates()));
         return $message;
     }
 }

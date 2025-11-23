@@ -17,7 +17,7 @@ return [
         'host' => env('DB_HOST', 'mariadb'),
         'port' => env('DB_PORT', 3306),
         'database' => env('DB_DATABASE', 'ls'),
-        'username' => env('DB_USERNAME', 'baoweikai'),
+        'username' => env('DB_USERNAME', 'zhrmghg'),
         'password' => env('DB_PASSWORD', 'huaren54321'),
         'charset' => env('DB_CHARSET', 'utf8mb4'),
         'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),

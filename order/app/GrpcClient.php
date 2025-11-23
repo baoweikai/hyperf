@@ -21,8 +21,12 @@ class GrpcClient extends BaseClient
             $request,
             [Request::class, 'decode']
         );
-        $message = $reply->getMessage();
-        var_dump(memory_get_usage(true));
-        return $message;
+        if($status == 0){
+            $message = $reply->getMessage();
+            var_dump('[111', $status, memory_get_usage(true));
+            return ['code' => 200, 'data' => $message];
+        } else {
+            return ['msg' => 'grpc error', 'code' => 501];
+        }
     }
 }
